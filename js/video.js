@@ -17,8 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     play.addEventListener("click", function () {
         video.play();
-
-        info.textContent = `Volume: ${Math.round(video.volume * 100)}%`;
+        info.textContent = `${Math.round(video.volume * 100)}%`;
     });
     oldbttn.addEventListener("click", function () {
         video.classList.add("oldSchool");
@@ -29,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 	slider.addEventListener("input", function () {
         video.volume = slider.value / 100;
-        info.textContent = `Volume: ${Math.round(video.volume * 100)}%`;
+        info.textContent = `${Math.round(video.volume * 100)}%`;
     });
 	skip.addEventListener("click", function () {
         video.currentTime += 10;
@@ -62,15 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log(`Speed: ${video.playbackRate}`);
     });
 
-    
-
-    
-
-    
-
-    
-
-    
 
     
 });
