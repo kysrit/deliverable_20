@@ -17,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     play.addEventListener("click", function () {
         video.play();
-        updateVolumeInfo();
+
+        info.textContent = `Volume: ${Math.round(video.volume * 100)}%`;
     });
     oldbttn.addEventListener("click", function () {
         video.classList.add("oldSchool");
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 	slider.addEventListener("input", function () {
         video.volume = slider.value / 100;
-        updateVolumeInfo();
+        info.textContent = `Volume: ${Math.round(video.volume * 100)}%`;
     });
 	skip.addEventListener("click", function () {
         video.currentTime += 10;
@@ -37,9 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         console.log(`Time: ${video.currentTime}`);
     });
-	function updateVolumeInfo() {
-		info.textContent = `Volume: ${Math.round(video.volume * 100)}%`;
-	 }
 
     pause.addEventListener("click", function () {
         video.pause();
